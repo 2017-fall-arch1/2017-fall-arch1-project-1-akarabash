@@ -20,14 +20,17 @@ int gets_n(char *s, int limit){
 int main(void){
   BST *tree;       /* A tree of names (char) */
   char name [30];  /* character */
+  FILE *fp;
 
+  
+  
   int choice;
 
   /* Create a new tree */
   tree = BST_Alloc();
 
   while(1){
-    printf("\n1-Insert Name \n2-Search Name \n3-Delete Name \n4-Exit \nEnter number corresponding to desired selection: ");
+    printf("\n1-Insert Name \n2-Search Name \n3-Delete Name \n4-Exit \n5-PrintToFile\n6-PrintTree\nEnter number corresponding to desired selection: ");
     scanf("%d",&choice);
     switch(choice){
     case 1:
@@ -51,6 +54,16 @@ int main(void){
       treeRemove(tree, name);
       break;
     case 4:
+      printTreeToFile(tree, fp);
+      fp = fopen("test.txt", "w");
+      if( fp == 0){
+	printf("Error opening file!\n");
+	exit(1);
+      }
+      fclose(fp);
+    case 5:
+      printTree(tree);
+    case 6:
       exit(0);
     default:
       printf("INVALID CHOICE");
