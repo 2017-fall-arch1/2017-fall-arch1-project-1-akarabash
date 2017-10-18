@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #define BSTREE_H_
 
 
@@ -60,3 +61,28 @@ int recurIsMember(tNode *root, char *isMem);
 void recurPrintTreeToFile(tNode *root, FILE *fp);
 
 #endif /* BSTREE_H_ */
+=======
+
+/* a node of the binary search tree */
+typedef struct node_s{
+	struct node_s *left, *right;
+	char *str;
+} tNode;
+
+/* a binary search tree comprised of nodes */
+typedef struct {
+	tNode *root;
+} BST;
+
+BST *BST_Alloc();
+
+void makeTreeEmpty(BST *tree)
+
+void treeAdd(BST *tree, char *s);
+
+void printTree(BST *tree, char*msg);
+
+int treeIsMember(BST *tree, char *s);
+
+void printTreeToFile(BST *tree, FILE *fp);
+>>>>>>> a42de625be37bc25a84142c574fd5c79e2b45392
