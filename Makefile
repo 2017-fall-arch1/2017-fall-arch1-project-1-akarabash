@@ -1,23 +1,22 @@
-all: llDemo
+all: bsTreeDemo
 
 CFLAGS=-g -O3
 
 # Symbols helpful for understanding the productions
-#   $@ is the production's target
-#   $^ are the production's prerequisites
+#    $@ is the production's target
+#    $^ are the production's prerequisites
 
-llDemo: llist.o llDemo.o
+bsTreeDemo: bsTree.o bsTreeDemo.o
 	cc -o $@ $^
 
-llist.o: llist.c llist.h
-	cc -c $(CFLAGS) llist.c
+bsTree.o: bsTree.c bsTree.h
+	cc -c $(CFLAGS) bsTree.c
 
-llDemo.o: llDemo.c llist.h
-	cc -c $(CFLAGS) llDemo.c
+bsTreeDemo.o: bsTreeDemo.c bsTree.h
+	cc -c $(CFLAGS) bsTreeDemo.c
 
 clean:
-	rm -f *.o llDemo
+	rm -f *.0 bsTreeDemo
 
-demo: llDemo
-	(echo first; echo "second line"; echo "third and last") | ./llDemo
-
+demo: bsTreeDemo
+	(echo first; echo "second line"; echo "third and last") | ./bsTreeDemo
