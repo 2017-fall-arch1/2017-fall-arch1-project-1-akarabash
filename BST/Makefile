@@ -19,4 +19,4 @@ clean:
 	rm -f *.0 bsTreeDemo
 
 demo: bsTreeDemo
-	/*(echo first; echo "second line"; echo "third and last") | ./bsTreeDemo */
+	
