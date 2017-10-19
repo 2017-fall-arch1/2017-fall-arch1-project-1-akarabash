@@ -55,12 +55,12 @@ int main(void){
       break;
     case 4:
       printTreeToFile(tree, fp);
-      fp = fopen("test.txt", "w");
+      /*fp = fopen("test.txt", "w");
       if( fp == 0){
 	printf("Error opening file!\n");
 	exit(1);
       }
-      fclose(fp);
+      fclose(fp);*/
     case 5:
       printTree(tree);
     case 6:
