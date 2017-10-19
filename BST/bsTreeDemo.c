@@ -21,9 +21,8 @@ int main(void){
   BST *tree;       /* A tree of names (char) */
   char name [30];  /* character */
   FILE *fp;
-
-  
-  
+  fp = fopen("file.txt", "w+");
+	
   int choice;
 
   /* Create a new tree */
