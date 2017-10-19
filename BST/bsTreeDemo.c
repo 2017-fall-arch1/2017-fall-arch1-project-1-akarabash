@@ -30,7 +30,7 @@ int main(void){
   tree = BST_Alloc();
 
   while(1){
-    printf("\n1-Insert Name \n2-Search Name \n3-Delete Name \n4-PrintToFile \n5-PrintTree \n6-PrintTree \nEnter number corresponding to desired selection: ");
+    printf("\n1-Insert Name \n2-Search Name \n3-Delete Name \n4-PrintToFile \n5-PrintTree \n6-Exit \nEnter number corresponding to desired selection: ");
     scanf("%d",&choice);
     switch(choice){
     case 1:
