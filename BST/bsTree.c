@@ -64,21 +64,17 @@ void treeAdd(BST *tree, char *s){
       if(!(checkOccupied->left)){
 	checkOccupied->left = toInsert;
 	wasInserted = 1;
-      }
-      else{
+      } else{
 	checkOccupied = checkOccupied->left;
       }
-    }
-    else if(strcmp(checkOccupied->str, toInsert->str) < 0){
+    } else if(strcmp(checkOccupied->str, toInsert->str) < 0){
       if(!(checkOccupied->right)){
 	checkOccupied->right =toInsert;
 	wasInserted = 1;
-      }
-      else{
+      } else{
 	checkOccupied = checkOccupied->right;
       }	
-    }
-    else{
+    } else{
       puts("Name already in tree. Employee name not added.\n");
       wasInserted =1;
     }
@@ -120,8 +116,7 @@ tNode *addNode(char *s){
 void printTree(BST *tree){
   if(tree->root == 0){
     puts("Empty tree. \n");
-  }
-  else{
+  } else{
     recursivePrint(tree->root);
     puts("\n");
   }
@@ -133,8 +128,7 @@ void recursivePrint(tNode *root){
   tNode *visitedR = root->right;
   if(root == 0){
     return;
-  }
-  else{
+  } else{
     recursivePrint(visitedL);
     printf("<%s>\n", root->str);
     recursivePrint(visitedR);
@@ -156,11 +150,9 @@ tNode *recursiveRemove(tNode *root, char *toBeRemoved){
   int cmp = (strcmp(root->str, toBeRemoved));
   if(cmp > 0){
     root->left = recursiveRemove(root->left, toBeRemoved);
-  }
-  else if (cmp < 0){
+  } else if (cmp < 0){
     root->right = recursiveRemove(root->right, toBeRemoved);
-  }
-  else{
+  } else{
     /* no children */
     if((root->left == 0) && (root->right == 0)){
       free(root);
@@ -226,8 +218,7 @@ int recurIsMember(tNode *root, char *isMem){
 void printTreeToFile(BST *tree, FILE *fp){
   if(tree->root == 0){
     fputs("Tree is empty.\n", fp);
-  }
-  else{
+  } else{
     recurPrintTreeToFile(tree->root, fp);
     fputs("\n",fp);
   }
@@ -237,8 +228,7 @@ void printTreeToFile(BST *tree, FILE *fp){
 void recurPrintTreeToFile(tNode *root, FILE *fp){
   if(root == 0){
     return;
-  }
-  else{
+  } else{
     fprintf(fp, "%s\n", root->str);
     recurPrintTreeToFile(root->left, fp);
     recurPrintTreeToFile(root->right, fp);
